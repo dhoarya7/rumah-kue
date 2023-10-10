@@ -1,6 +1,6 @@
 /* font */
 
-@import url("https://fonts.googleapis.com/css2?family=Charis+SIL&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Oswald&family=Philosopher:wght@700&display=swap");
 
 * {
   margin: 0;
@@ -36,7 +36,7 @@ header {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background: #fff;
+  background: #ebdbc8c0;
   box-shadow: 0 4px 41px rgb(14, 55, 54 / 14%);
   padding: 15px 10%;
   transition: 0.2s;
@@ -55,7 +55,7 @@ header {
 .navbar a {
   font-size: 1rem;
   padding: 11px 20px;
-  color: var(--second-color);
+  color: #696765;
   font-weight: 600;
   text-transform: uppercase;
 }
@@ -113,25 +113,29 @@ header {
   }
 }
 .home-text span {
-  font-size: 1rem;
+  font-size: 1.8rem;
   text-transform: uppercase;
   font-weight: 600;
-  color: rgb(250, 210, 137);
+  color: rgb(175, 147, 94);
   font-style: italic;
+  font-family: "Oswald", sans-serif;
 }
-.home-img h1 {
-  font-size: 3.2rem;
-  color: rgb(250, 210, 137);
-  font-weight: bolder;
+.home-text h1 {
+  font-size: 3.4rem;
+  text-transform: uppercase;
+  font-weight: 600;
+  color: rgba(161, 109, 14, 1);
   font-style: italic;
+  font-family: "Oswald", sans-serif;
 }
 .home-text h2 {
   font-size: 1.8rem;
   font-weight: 600;
-  color: rgb(250, 210, 137);
+  color: rgb(175, 147, 94);
   text-transform: uppercase;
   margin: 0.5rem 0 1.4rem;
   font-style: italic;
+  font-family: "Oswald", sans-serif;
 }
 .btn {
   padding: 7px 16px;
@@ -176,7 +180,7 @@ header {
 }
 .shop-container .box {
   flex: 1 1 10rem;
-  background: var(--main-color);
+  background: #696765;
   padding: 20px;
   display: flex;
   text-align: center;
@@ -234,7 +238,7 @@ header {
   border-bottom: 2px solid #dd8e28;
 }
 .delivery .heading span {
-  font-size: 1rem;
+  font-size: 2rem;
   font-weight: 600;
   color: rgba(161, 109, 14, 1);
   text-shadow: 1px 1px 1px black;
@@ -367,7 +371,7 @@ header {
     font-size: 1.5rem;
   }
 }
-@media (max-width: 001px) {
+@media (max-width: 1001px) {
   header {
     padding: 18px 4%;
   }
