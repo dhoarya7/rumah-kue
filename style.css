@@ -74,13 +74,24 @@ header {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  background: url(background2.png);
-  background-size: cover;
-  justify-content: center;
   position: relative;
   z-index: 0;
   gap: 1rem;
+  z-index: 10;
 }
+.home .bg {
+  background: url(background2.png);
+  background-size: cover;
+  justify-content: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: #ebdbc8;
+  width: 100%;
+  height: 100%;
+  z-index: -10;
+}
+
 .home-text {
   flex: 1 1 17rem;
 }
@@ -136,18 +147,18 @@ header {
 .shop-content .heading {
   text-align: center;
   text-transform: uppercase;
-  border-bottom: 2px solid #81004b;
+  border-bottom: 2px solid rgba(161, 109, 14, 1);
 }
 .shop-content .heading span {
   font-size: 2rem;
   font-weight: 1000;
-  color: var(--second-color);
+  color: rgba(161, 109, 14, 1);
   text-shadow: 1px 1px 1px black;
-  border-bottom: 2px solid rgb(49, 8, 97);
+  border-bottom: 2px solid rgba(161, 109, 14, 1);
 }
 .shop-content .heading h1 {
   font-size: 2rem;
-  color: var(--second-color);
+  color: rgba(161, 109, 14, 1);
   text-shadow: 1px 1px 1px black;
 }
 
@@ -157,14 +168,15 @@ header {
   padding: 100px 100px;
 }
 .shop-container {
-  display: flex;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   flex-wrap: wrap;
   gap: 1rem;
   margin-top: 2.5rem;
 }
 .shop-container .box {
   flex: 1 1 10rem;
-  background: var(--second-color);
+  background: var(--main-color);
   padding: 20px;
   display: flex;
   text-align: center;
@@ -211,11 +223,10 @@ header {
   display: flex;
   flex-wrap: wrap;
   gap: 1.5rem;
-  margin-top: 2rem;
 }
 
 .delivery {
-  background-color: #81004b;
+  background-color: #ebdbc8;
 }
 .delivery .heading {
   text-align: center;
@@ -225,11 +236,14 @@ header {
 .delivery .heading span {
   font-size: 1rem;
   font-weight: 600;
-  color: var(--main-color);
+  color: rgba(161, 109, 14, 1);
+  text-shadow: 1px 1px 1px black;
+  border-bottom: 2px solid rgba(161, 109, 14, 1);
 }
 .delivery .heading h1 {
   font-size: 2rem;
-  color: var(--main-color);
+  color: rgba(161, 109, 14, 1);
+  text-shadow: 1px 1px 1px black;
 }
 #gallary {
   background-color: #dd8e28;
@@ -255,17 +269,16 @@ header {
 /* about */
 #about {
   background-color: #ebdbc8;
-}
-#about {
-  margin-top: 50px;
+  padding: 50px 0;
 }
 #about h1 {
+  width: 100%;
+  margin: auto;
   text-align: center;
   font-weight: bold;
-  margin-top: 50px;
-  color: rgb(161, 14, 129);
+  color: rgba(161, 109, 14, 1);
   text-shadow: 1px 1px 1px black;
-  border-bottom: 2px solid rgb(161, 14, 129);
+  border-bottom: 2px solid rgba(161, 109, 14, 1);
 }
 #about .card {
   background-color: rgba(161, 109, 14, 1);
@@ -283,14 +296,26 @@ header {
   border: none;
   cursor: pointer;
 }
-@media screen and (max-width: 1000px) {
+@media (max-width: 1000px) {
   #about p {
     font-size: 10px;
   }
+  .contact .form {
+    max-width: 80%;
+    width: 100%;
+  }
+  .group {
+    display: none;
+  }
 }
-@media screen and (max-width: 760px) {
+@media (max-width: 760px) {
   #about p {
     font-size: 20px;
+  }
+
+  .contact .form {
+    max-width: 100%;
+    width: 100%;
   }
 }
 /* about */
@@ -430,7 +455,7 @@ header {
 /* banner */
 .banner {
   width: 100%;
-  height: 60vh;
+  height: 100%;
   display: flex;
   background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
     url(banner2.png);
@@ -439,7 +464,7 @@ header {
   justify-content: center;
   flex-wrap: wrap;
   box-shadow: 0px 0px 10px black;
-  margin-top: 50px;
+  padding: 50px 0;
 }
 .banner .img {
   flex: 1 1 400px;
@@ -450,7 +475,6 @@ header {
 .banner .content {
   flex: 1 1 400px;
   margin-left: 60px;
-  margin-top: 60px;
 }
 .banner .content h3 {
   color: rgb(250, 210, 137);
@@ -476,12 +500,12 @@ header {
   border-radius: 5px;
   cursor: pointer;
 }
-@media screen and (max-width: 800px) {
+@media (max-width: 800px) {
   .banner .content h3 {
     font-size: 50px;
   }
 }
-@media screen and (max-width: 855px) {
+@media (max-width: 855px) {
   .banner {
     height: 100vh;
   }
@@ -489,11 +513,11 @@ header {
 /* banner end */
 
 /* gallary */
-
 #gallary {
-  margin-top: 50px;
+  background-color: #ebdbc8;
 }
 #gallary h1 {
+  width: 100%;
   text-align: center;
   font-weight: bold;
   margin-top: 50px;
@@ -506,23 +530,34 @@ header {
   cursor: pointer;
 }
 #gallary .overlay {
+  width: 100%;
+  height: 100%;
+  position: absolute;
   opacity: 0;
   width: 100%;
   color: white;
+  background-color: rgba(0, 0, 0, 0.445);
   text-shadow: 1px 1px 1px black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 #gallary .card:hover .overlay {
   opacity: 5;
-  margin-top: 20%;
   transition: 0.5s ease;
 }
 /* contact */
 #contact {
-  margin-top: 100px;
   background-color: #ebdbc8;
 }
 
+.contact .form {
+  max-width: 60%;
+  width: 100%;
+}
+
 #contact h1 {
+  width: 100%;
   text-align: center;
   font-weight: bold;
   margin-top: 50px;
@@ -566,7 +601,6 @@ header {
   width: 100%;
   background-color: #573818;
   box-shadow: 0px 0px 5px black;
-  margin-top: 100px;
 }
 #footer h1 {
   color: white;
@@ -609,4 +643,22 @@ html {
   text-decoration: none;
   text-align: center;
   line-height: 50px;
+}
+
+.swiper {
+  width: 600px;
+  height: 300px;
+}
+
+.group {
+  overflow: hidden;
+  border-radius: 4px;
+}
+
+.group .card img {
+  transform: scale(1);
+  transition: 0.5s;
+}
+.group:hover .card img {
+  transform: scale(1.1);
 }
