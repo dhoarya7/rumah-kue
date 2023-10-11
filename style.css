@@ -169,7 +169,7 @@ header {
 .shop-content,
 .gallary {
   background-color: #ebdbc8;
-  padding: 100px 100px;
+  padding: 16px;
 }
 .shop-container {
   display: grid;
